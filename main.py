@@ -58,4 +58,8 @@ ax.tick_params(axis='x', rotation=45)
 plt.legend(loc="upper left", bbox_to_anchor=(1.05, 1), borderaxespad=0.)
 plt.tight_layout()
 plt.grid(True)
+
+os.makedirs("out", exist_ok=True)
+plt.savefig("out/" + str(files[-1]).split(".")[0] + ".png", dpi=300, bbox_inches='tight')
+
 plt.show()
