@@ -43,8 +43,14 @@ df_plot = pd.DataFrame(net_worth_history)
 
 # Plot
 plt.figure()
+include_all = False
 for name in sorted(df_plot.columns):
-    plt.plot(df_plot.index, df_plot[name], label=name.title())
+    print(name)
+    if include_all:
+        plt.plot(df_plot.index, df_plot[name], label=name.title())
+    else:
+        if name != "michael ruiz":
+            plt.plot(df_plot.index, df_plot[name], label=name.title())
 
 plt.title("Artisan Partners VSE Intern Game Networth Analysis")
 plt.xlabel("Date")
@@ -60,6 +66,11 @@ plt.tight_layout()
 plt.grid(True)
 
 os.makedirs("out", exist_ok=True)
-plt.savefig("out/" + str(files[-1]).split(".")[0] + ".png", dpi=300, bbox_inches='tight')
+if include_all:
+    file_name = "out/" + str(files[-1]).split(".")[0] + ".png"
+else:
+    file_name = "out/" + str(files[-1]).split(".")[0] + "-no-michael.png"
+
+plt.savefig(file_name, dpi=300, bbox_inches='tight')
 
 plt.show()
