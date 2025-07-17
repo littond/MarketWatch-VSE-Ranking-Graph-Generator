@@ -43,7 +43,7 @@ df_plot = pd.DataFrame(net_worth_history)
 
 # Plot
 plt.figure()
-include_all = True
+include_all = False
 for name in sorted(df_plot.columns):
     print(name)
     if include_all:
