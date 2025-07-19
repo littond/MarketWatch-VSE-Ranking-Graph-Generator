@@ -49,7 +49,7 @@ for name in sorted(df_plot.columns):
     if include_all:
         plt.plot(df_plot.index, df_plot[name], label=name.title())
     else:
-        if name != "michael ruiz":
+        if name != "michael ruiz" and name != "lucy mcgovern":
             plt.plot(df_plot.index, df_plot[name], label=name.title())
 
 plt.title("Artisan Partners VSE Intern Game Networth Analysis")
