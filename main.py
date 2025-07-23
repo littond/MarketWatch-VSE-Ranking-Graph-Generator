@@ -69,7 +69,7 @@ os.makedirs("out", exist_ok=True)
 if include_all:
     file_name = "out/" + str(files[-1]).split(".")[0] + ".png"
 else:
-    file_name = "out/" + str(files[-1]).split(".")[0] + "-no-michael.png"
+    file_name = "out/" + str(files[-1]).split(".")[0] + "-no-m-or-l.png"
 
 plt.savefig(file_name, dpi=300, bbox_inches='tight')
 
